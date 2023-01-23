@@ -1,35 +1,33 @@
 import HomePage from "./pages/homePage/homePage";
 import ErrorPage from "./pages/errorPage/errorPage";
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import AboutPage from "./pages/aboutPage/aboutPage";
 import SingleMoviePage from "./pages/singleMoviePage/singleMoviePage";
 import FavoritesPage from "./pages/favoritesPage/FavoritesPage";
-import Header from "./components/Header/Header"; 
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
+import { movieContext } from "./context/Context";
 function App() {
   return (
     <>
-    <Header />
+      <Header />
+      <movieContext.Provider value={"sapito"}>
+        <Routes>
+          {/*/Static links */}
+          <Route index path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
 
-    <Routes>  
-    {/*/Static links */}
-      <Route index path="/" element={<HomePage />} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/favorites" element={<FavoritesPage/>}/>
+          {/*Dynamic links */}
+          <Route path="/search/:movieId" element={<SingleMoviePage />} />
+          <Route path="/error/:errorCode" element={<ErrorPage />} />
 
-    {/*Dynamic links */}
-      <Route path="/search/:movieId" element={<SingleMoviePage />} />
-      <Route path="/error/:errorCode" element={<ErrorPage />} />
-      
-      
-      
-      {/*Unknown pages*/}
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
-    <Footer />
-
+          {/*Unknown pages*/}
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </movieContext.Provider>
+      <Footer />
     </>
   );
 }
