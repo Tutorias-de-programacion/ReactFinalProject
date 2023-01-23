@@ -1,0 +1,5 @@
+@import url(../../styles/globalStyles.css);
+
+navBg {
+  background-color: var(--netflix-red);
+}
