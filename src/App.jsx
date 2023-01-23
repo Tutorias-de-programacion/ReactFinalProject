@@ -6,12 +6,17 @@ import SingleMoviePage from "./pages/singleMoviePage/singleMoviePage";
 import FavoritesPage from "./pages/favoritesPage/FavoritesPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { movieContext } from "./context/Context";
+// import { movieContext } from "./context/Context";
+import getMovieList from "./hooks/getMovieList";
+import { useState } from "react";
+
+
 function App() {
+
   return (
     <>
       <Header />
-      <movieContext.Provider value={"sapito"}>
+ 
         <Routes>
           {/*/Static links */}
           <Route index path="/" element={<HomePage />} />
@@ -26,7 +31,6 @@ function App() {
           {/*Unknown pages*/}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-      </movieContext.Provider>
       <Footer />
     </>
   );
