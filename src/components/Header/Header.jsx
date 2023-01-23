@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+
 
 //Please use <Link> or <NavLink> instead of <a> for more information:
 //Link https://reactrouter.com/en/main/components/link
@@ -31,7 +31,7 @@ const Header = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button>Search</Button>
+            <Button variant="primary" className="txtColor">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
