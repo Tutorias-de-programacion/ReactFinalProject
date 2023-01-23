@@ -1,5 +1,17 @@
 @import url(../../styles/globalStyles.css);
 
-navBg {
+.navBg {
   background-color: var(--netflix-red);
+  
+}
+
+.navText {
+    color: var(--netflix-white) !important;
+}
+
+.navButton {
+  background-color: var(--netflix-white);
+  color: var(--netflix-red);
+  border-radius: 20px;
+  border: none;
 }

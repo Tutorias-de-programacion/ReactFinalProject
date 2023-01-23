@@ -4,3 +4,8 @@
     --netflix-black: #000000;
     --netflix-white: #FFFFFF;
 }
+
+.btn-primary {
+    background-color: var(--netflix-white);
+    color: var(--netflix-white);
+}
