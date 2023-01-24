@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import SearchBar from '../searchPage/searchPage'
+import SearchBar from '../../components/SearchBar/SearchBar'
 
 const ErrorPage = () => {
   const { errorCode } = useParams();
