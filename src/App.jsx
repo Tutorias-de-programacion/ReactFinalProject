@@ -1,13 +1,35 @@
-import { useState } from "react";
+import HomePage from "./pages/homePage/homePage";
+import ErrorPage from "./pages/errorPage/errorPage";
+import { Route, Routes} from "react-router-dom";
+import AboutPage from "./pages/aboutPage/aboutPage";
+import SingleMoviePage from "./pages/singleMoviePage/singleMoviePage";
+import FavoritesPage from "./pages/favoritesPage/FavoritesPage";
+import Header from "./components/Header/Header"; 
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
-      <h1>Welcome to reactFlix</h1>
-      <h2>Please read the readme file before do any change to this code.</h2>
-      <h2>Check the backlog here:</h2>
-      <a href="https://www.notion.so/">www.notion.so</a>
-      <p>For further information please ask in the whatsapp group. </p>
+    <Header />
+
+    <Routes>  
+    {/*/Static links */}
+      <Route index path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/favorites" element={<FavoritesPage/>}/>
+
+    {/*Dynamic links */}
+      <Route path="/search/:movieId" element={<SingleMoviePage />} />
+      <Route path="/error/:errorCode" element={<ErrorPage />} />
+      
+      
+      
+      {/*Unknown pages*/}
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
+    <Footer />
+
     </>
   );
 }

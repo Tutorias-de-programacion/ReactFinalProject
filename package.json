@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node message.js && vite",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -15,7 +15,9 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.7.0"
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.7.0",
+    "sass": "^1.57.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
