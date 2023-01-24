@@ -7,3 +7,7 @@
 .navBg {
   background-color: var(--netflix-black);
 }
+
+.form-field {
+  border-radius: 40px !important;
+}

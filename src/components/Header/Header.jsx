@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 //Please use <Link> or <NavLink> instead of <a> for more information:
 //Link https://reactrouter.com/en/main/components/link
@@ -25,13 +25,14 @@ const Header = () => {
             navbarScroll
           ></Nav>
           <Form className="d-flex">
-          <Button variant="primary" className="txtColor"><AiOutlineSearch /></Button>
+          <Button variant="dark" className="txtColor"><AiOutlineSearch /></Button>
             <Form.Control
               type="search"
               placeholder="Search"
-              className="me-2"
+              className="me-2 form-field"
               aria-label="Search"
-            />            
+            />
+            <Button variant="dark" className="txtColor"><AiFillStar className="navText" /></Button>            
           </Form>
         </Navbar.Collapse>
       </Container>
