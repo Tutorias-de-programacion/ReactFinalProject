@@ -9,10 +9,11 @@ import Footer from "./components/Footer/Footer";
 // import { movieContext } from "./context/Context";
 import getMovieList from "./hooks/getMovieList";
 import { useState } from "react";
-
+import getSingleMovie from "./hooks/getSingleMovie";
 
 function App() {
 
+getSingleMovie()
   return (
     <>
       <Header />
