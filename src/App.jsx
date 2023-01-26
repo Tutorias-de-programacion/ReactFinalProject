@@ -22,7 +22,7 @@ function App() {
 
         {/*Dynamic links */}
         <Route path="/search/:query" element={<SearchPage />} />
-        <Route path="/movie/:id" element={<SingleMoviePage />} />
+        <Route path="/movie/:movieId" element={<SingleMoviePage />} />
         <Route path="/error/:errorCode" element={<ErrorPage />} />
 
         {/*Unknown pages*/}
