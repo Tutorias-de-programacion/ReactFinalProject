@@ -6,14 +6,12 @@ import SingleMoviePage from "./pages/singleMoviePage/singleMoviePage";
 import FavoritesPage from "./pages/favoritesPage/FavoritesPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-// import { movieContext } from "./context/Context";
-import getMovieList from "./hooks/getMovieList";
-import { useState } from "react";
+// import { movieContext } from "./context/Context"; 
 import getSingleMovie from "./hooks/getSingleMovie";
 
 function App() {
 
-getSingleMovie()
+console.log(getSingleMovie());
   return (
     <>
       <Header />
