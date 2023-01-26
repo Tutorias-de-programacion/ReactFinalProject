@@ -1,9 +1,9 @@
 import { createContext } from "react";
 
 
-const movieContext = createContext([])
+const searchContext = createContext([])
 
 
 
 
-export {movieContext};
+export {searchContext};

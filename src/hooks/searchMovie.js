@@ -1,4 +1,4 @@
-import searchSample from "../SampleData/movieSearch.samaple.json";
+import searchSample from "../SampleData/movieSearch.sample.json";
 
 /**
  * @param {string} query - The movie that you are going to search.

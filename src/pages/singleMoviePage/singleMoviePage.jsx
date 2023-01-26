@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 
+
 const SingleMoviePage = () => {
+
   const { movieId } = useParams();
   return (
     <>
