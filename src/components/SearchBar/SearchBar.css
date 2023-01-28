@@ -1,0 +1,13 @@
+@import url(../../styles/globalStyles.css);
+
+.navText {
+  color: var(--netflix-white) !important; 
+}
+
+.navBg {
+  background-color: var(--netflix-black);
+}
+
+.form-field {
+  border-radius: 40px !important;
+}
