@@ -9,6 +9,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { AiOutlineSearch, AiFillStar } from "react-icons/ai";
 
+
 //Please use <Link> or <NavLink> instead of <a> for more information:
 //Link https://reactrouter.com/en/main/components/link
 //NavLink https://reactrouter.com/en/main/components/nav-link
@@ -25,7 +26,9 @@ const Header = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           ></Nav>
+
           <SearchBar />
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
