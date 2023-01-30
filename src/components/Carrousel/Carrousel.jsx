@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import "./Carrousel.css";
 import { Link } from "react-router-dom";
 const ReactFlixCarrousel = ({
-  category ="Popular",
-  page= 1,
+  category = "Popular",
+  page = 1,
   title = "carrousel",
   autoChange = true,
 }) => {

@@ -1,12 +1,9 @@
-.card-group
-{
-    border-style: none;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
-
+.card-group {
+  border-style: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
-
 
 .carrouselCard {
   display: flex;
@@ -14,18 +11,12 @@
   flex-wrap: nowrap;
   padding: 0;
 }
-.carrouselCard--img
-{
-    max-width: 10vhs;
+.carrouselCard--img {
+  max-width: 10vhs;
 }
 
 @media screen and (max-width: 480px) {
-  
-    .carrouselCard--img
-    {
-        max-width: 100vh;
-        width: 1000px;
-        
-
-    }
-} 
+  .carrouselCard--img {
+    max-width: 100vh;
+  }
+}

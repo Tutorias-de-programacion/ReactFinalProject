@@ -13,10 +13,10 @@ const HomePage = () => {
       {
         category ="popular",
         page= 1,
-        title = "carrousel",
+        title = "Popular",
         autoChange = true
       
-      z/added> */}
+    added*/}
       <ReactFlixCarrousel title="Popular" page={1} autoChange={false} />
 
       <ReactFlixCarrousel title="Unpopular" />
