@@ -9,7 +9,15 @@ const HomePage = () => {
       <a href="https://www.notion.so/">www.notion.so</a>
       <p>For further information please ask in the whatsapp group. </p>
 
-      <ReactFlixCarrousel title="Popular" />
+      {/*Keep in mind that the carrousel will work just if you use it in this way, but if you don't set the values. It has default values that will going to be added like this:
+      {
+        category ="popular",
+        page= 1,
+        title = "carrousel",
+        autoChange = true
+      
+      z/added> */}
+      <ReactFlixCarrousel title="Popular" page={1} autoChange={false} />
 
       <ReactFlixCarrousel title="Unpopular" />
     </>

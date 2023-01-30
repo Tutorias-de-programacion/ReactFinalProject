@@ -7,6 +7,7 @@
 
 }
 
+
 .carrouselCard {
   display: flex;
   flex-direction: row;
@@ -15,12 +16,16 @@
 }
 .carrouselCard--img
 {
-    max-width: 300px;
+    max-width: 10vhs;
 }
 
 @media screen and (max-width: 480px) {
+  
     .carrouselCard--img
     {
-        max-width: 400px;
+        max-width: 100vh;
+        width: 1000px;
+        
+
     }
 } 
