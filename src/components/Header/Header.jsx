@@ -7,7 +7,8 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { AiOutlineSearch, AiFillStar } from "react-icons/ai";
+import { Image } from "react-bootstrap";
+import logo from "../../Assets/img/reactflixLogo.png";
 
 
 //Please use <Link> or <NavLink> instead of <a> for more information:
@@ -18,7 +19,7 @@ const Header = () => {
   return (
     <Navbar className="navBg" expand="lg">
       <Container fluid>
-        <Navbar.Brand className="navText" href="#">Reactflix</Navbar.Brand>
+        <Navbar.Brand className="navText" href="#"><Image fluid src={logo} style={{ maxHeight: "50px" }} className="m-0" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

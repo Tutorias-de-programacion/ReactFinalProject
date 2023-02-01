@@ -41,7 +41,7 @@ const Footer = () => {
                 <Row>
                     <Col></Col>
                     <Col>
-                        <Image src={logo} fluid alt="Netflix Logo" />
+                        <Image src={logo} fluid alt="Netflix Logo" className="pb-3" />
                     </Col>
                     <Col></Col>    
                 </Row>   
