@@ -6,6 +6,7 @@
 
 .navBg {
   background-color: var(--netflix-black);
+  border-bottom: 7px solid #454242;
 }
 
 .form-field {
