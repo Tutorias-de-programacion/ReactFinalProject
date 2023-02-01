@@ -1,0 +1,11 @@
+.footBg {
+  background-color: #141414;
+  color: white;
+}
+
+.b {
+  background-color: #141414 !important;
+  color: white !important;
+  border-radius: 0px !important;
+  border-color: white !important;
+}
