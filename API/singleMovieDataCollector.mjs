@@ -16,6 +16,7 @@ async function getMovieImages(movieId) {
   );
   imagesData = { ...imagesData, images: await getImages.data };
 
+  console.log(imagesData.images);
   //Detect if the movies has collections
   if (movieDetails.belongs_to_collection) {
     const collectionId = movieDetails.belongs_to_collection.id;
@@ -25,10 +26,36 @@ async function getMovieImages(movieId) {
     const collections = await collectionRaw.data;
     imagesData = { ...imagesData, images: collections };
   }
+  //Now we I will filter the data
+  const filteredBackdrops = imagesData.images.backdrops.map((backdrop) => {
+    return {
+      height: backdrop.height,
+      path: `http://image.tmdb.org/t/p/w500${backdrop.file_path}`,
+      aspectRatio: backdrop.aspect_ratio,
+    };
+  });
+  const filteredPosters = imagesData.images.posters.map((poster) => {
+    return {
+      height: poster.height,
+      path: `http://image.tmdb.org/t/p/w500${poster.file_path}`,
+      aspectRatio: poster.aspect_ratio,
+    };
+  });
+  const filteredLogos = imagesData.images.posters.map((logo) => {
+    return {
+      height: logo.height,
+      path: `http://image.tmdb.org/t/p/w500${logo.file_path}`,
+      aspectRatio: logo.aspect_ratio,
+    };
+  });
+  imagesData.images.posters = filteredPosters;
+  imagesData.images.backdrops = filteredBackdrops;
+  imagesData.images.logos = filteredLogos;
 
-  return { 
-  backdrops: imagesData.images.backdrops,
-  posters: imagesData.images.posters
+  return {
+    backdrops: imagesData.images.backdrops,
+    posters: imagesData.images.posters,
+    logos: imagesData.images.logos
   };
 }
 
