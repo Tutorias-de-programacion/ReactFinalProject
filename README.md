@@ -12,23 +12,24 @@ Este es el proyecto final para la clase de ReactJs con el profesor Francis Fulge
 ```diff
 - IMPORTANTE: 
 ```
-> Los commits deberán ser hechos a un sub branch de la autoría de cada participante, este le hará pull request al branch Dev. 
+
+> Los commits deberán ser hechos a un sub branch de la autoría de cada participante, este le hará pull request al branch Dev.
 
 > El branch debe tener el nombre del feature que se está trabajando.
-
 
 ## Standard commit
 
 Usaremos códigos [bracket code] para reportar lo que nosotros hicimos. La nomenclatura sería como esta:
 
-### Tickets:
-[Ticket] [bracket code] descripción 
+### Tickets
+
+[Ticket] [bracket code] descripción
 
 ##### Ejemplo
 
 > [Ti-01][Feat] config fetch hook to call to the public server.
 
-### Los brackets codes son tres:
+### Los brackets codes son tres
 
 #### Feature
 
@@ -43,6 +44,7 @@ Usaremos códigos [bracket code] para reportar lo que nosotros hicimos. La nomen
 [Ref] hacer una modificación o corrección, por ejemplo se organizó el código con prettier, o fue corregido el error en el archivo readme.md.
 
 ##### Ejemplo
+
 - > [Ti-02] [Ref] refactors clickHandler function to make it more efficient.
 
 #### Fix issue
@@ -50,5 +52,13 @@ Usaremos códigos [bracket code] para reportar lo que nosotros hicimos. La nomen
 [Fix] Corrección mayor por ejemplo: solucionar el problema de duracion a la hora de llamar la Api.
 
 ##### Ejemplo
+
 - > [Ti-03] [Fix] Fixed infinite loop triggered by onClick event.
 
+## API KEY
+
+Un cambio importante, para poder utilizar el proyecto es crear tu API key de themoviedb. Puedes conseguir la tuya aquí: <https://www.themoviedb.org/settings/api/new?type=developer>
+
+##### .env
+
+Una vez obtengas tu api key, copia el archivo .env.template y agrega el api key, recuerda dejar el archivo .env.template pero crea una copia que solo se llame .env, es importante para que no borres la plantilla en un próximo commit…
