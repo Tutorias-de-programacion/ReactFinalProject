@@ -6,7 +6,7 @@ import {
   getMovieMainActors,
   getMovieVideos,
   getMovieWriter,
-} from "./requesters.mjs";
+} from "./singleMovieDataCollector.mjs";
 import cors from "cors";
 
 const port = process.env.PORT || 5000;
