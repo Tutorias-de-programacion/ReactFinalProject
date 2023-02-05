@@ -8,12 +8,14 @@ const SearchPage = () => {
 
   return (
     <>
-        <h1>
-            Your current search is: {query}
-        </h1>
-        {
-           JSON.stringify(currentSearch)
-        }
+      <div className="body">
+          <h1>
+              Your current search is: {query}
+          </h1>
+          {
+            JSON.stringify(currentSearch)
+          }
+      </div>
     </>
   );
 };
