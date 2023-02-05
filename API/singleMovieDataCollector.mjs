@@ -16,7 +16,6 @@ async function getMovieImages(movieId) {
   );
   imagesData = { ...imagesData, images: await getImages.data };
 
-  console.log(imagesData.images);
   //Detect if the movies has collections
   if (movieDetails.belongs_to_collection) {
     const collectionId = movieDetails.belongs_to_collection.id;
@@ -55,7 +54,7 @@ async function getMovieImages(movieId) {
   return {
     backdrops: imagesData.images.backdrops,
     posters: imagesData.images.posters,
-    logos: imagesData.images.logos
+    logos: imagesData.images.logos,
   };
 }
 
