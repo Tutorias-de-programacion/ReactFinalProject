@@ -7,12 +7,19 @@ import {
   getMovieVideos,
   getMovieWriter,
 } from "./singleMovieDataCollector.mjs";
+import getMovieList from "./movieListDataCollector.mjs";
 import cors from "cors";
 
 const port = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
+
+app.get("/movies/:category/page/:pageId", (req, res) => {
+  const category = req.params.category;
+  const page = req.params.pageId;
+  getMovieList(category, page).then((data) => res.json(data));
+});
 
 app.get("/movie/:id", (req, res) => {
   const id = req.params.id;
