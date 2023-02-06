@@ -7,7 +7,7 @@ const api_key = process.env.TMDB_API_KEY;
 
 async function searchMovie(query, page) {
     const movieListRaw = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&page=1&include_adult=false&query=${query}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&page=${page}&include_adult=false&query=${query}`
     );
     let movieList = await movieListRaw.data.results.map((movie) => {
       return {
