@@ -1,4 +1,4 @@
-import express from "express";
+import express, { query } from "express";
 import {
   getMovieDetails,
   getMovieDirector,
@@ -8,12 +8,26 @@ import {
   getMovieWriter,
 } from "./singleMovieDataCollector.mjs";
 import getMovieList from "./movieListDataCollector.mjs";
+import searchMovie from "./searchMovieCollector.mjs";
 import cors from "cors";
 
 const port = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
+
+app.get("/movie/query=:query", (req,res) =>{
+  const query = req.params.query;
+  searchMovie(query).then(results => {
+
+    res.json(results)
+  })
+
+
+});
+
+
+
 
 app.get("/movies/:category/page/:pageId", (req, res) => {
   const category = req.params.category;
