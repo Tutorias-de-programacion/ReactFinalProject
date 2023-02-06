@@ -26,7 +26,7 @@ async function getMovieList(category, page) {
     };
   });
 
-  return movieList;
+  return {results: movieList, total_pages: movieListRaw.data.total_pages};
 }
 
 export default getMovieList;

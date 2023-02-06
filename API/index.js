@@ -26,9 +26,6 @@ app.get("/movie/query=:query/page/:page", (req,res) =>{
 
 });
 
-
-
-
 app.get("/movies/:category/page/:pageId", (req, res) => {
   const category = req.params.category;
   const page = req.params.pageId;
