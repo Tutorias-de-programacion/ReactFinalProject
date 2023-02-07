@@ -19,10 +19,8 @@ app.use(cors());
 app.get("/movie/query=:query/page/:page", (req,res) =>{
   const query = req.params.query;
   searchMovie(query).then(results => {
-
     res.json(results)
   })
-
 
 });
 
