@@ -3,23 +3,21 @@ import axios from "axios";
 
 function useSearchMovie(query, page) {
   const [movieList, setMovieList] = useState([]);
-  const [amountOfPages, setAmountOfPages] = useState(0);
-
+  const [maxAmountOfPages, setMaxAmountOfPages] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
-      console.log(query)
       const response = await axios.get(
-        `http://localhost:5000/movie/query=${query}/page/${page}`
+        `http://localhost:5000/movie/${query}/page/${page}`
       );
-      setAmountOfPages(response.data.total_pages);
+      setMaxAmountOfPages(response.data.total_pages);
       setMovieList(response.data.results);
     }
 
     fetchData();
-  }, []);
+  }, [query, page]);
 
-  return [movieList, amountOfPages];
+  return [movieList, maxAmountOfPages];
 }
 
 export default useSearchMovie;

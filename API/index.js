@@ -16,9 +16,10 @@ const app = express();
 
 app.use(cors());
 
-app.get("/movie/query=:query/page/:page", (req,res) =>{
+app.get("/movie/:query/page/:page", (req,res) =>{
   const query = req.params.query;
-  searchMovie(query).then(results => {
+  const page = req.params.page;
+  searchMovie(query,page).then(results => {
     res.json(results)
   })
 
