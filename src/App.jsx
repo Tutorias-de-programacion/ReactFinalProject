@@ -22,7 +22,7 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} />
 
         {/*Dynamic links */}
-        <Route path="/search/:query" element={<SearchPage />} />
+        <Route path="/search/:query/page/:pageNo" element={<SearchPage />} />
         <Route path="/movie/:movieId" element={<SingleMoviePage />} />
         <Route path="/error/:errorCode" element={<ErrorPage />} />
 
