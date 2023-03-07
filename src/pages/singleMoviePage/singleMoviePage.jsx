@@ -1,14 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import useGetSingleMovie from "../../hooks/useGetSingleMovie";
-import YoutubeVideo from "../../components/youtubeVideo/youtubeVideo";
 import './singleMoviePage.css'
 import Button from "../../components/Button/Button";
 
-
+/*
 
 import dataSchema from "./dataSchema.png";
-/*I know this is obvious but if don't delete
+I know this is obvious but if don't delete
        the data Schema when you finish working with this page
        or if you don't need it. 
        */
@@ -39,9 +38,10 @@ const SingleMoviePage = () => {
                 <div className="SinglePage_main_left">
                     <h3>{movie.title.split(" ")[0]}</h3>
                     <h4>{movie.title.slice(1)}</h4>
+
                     <p>{movie.overview}</p>
                     <div>
-                      {/* <Button/> */}
+                        button
                     </div>
                 </div>
                 <div className="SinglePage_main_right">
@@ -82,7 +82,9 @@ const SingleMoviePage = () => {
             to use an alternative image when the image doesn't exist.
             */
             
+
             }
+
         </div>
       )}
     </>
