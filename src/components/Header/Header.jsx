@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Image } from "react-bootstrap";
+import FavoritesPageButton from "../Favorites/FavoritesPageButton";
 import logo from "../../Assets/img/reactflixLogo.png";
 
 
@@ -29,6 +30,7 @@ const Header = () => {
           ></Nav>
 
           <SearchBar />
+          <FavoritesPageButton/>
 
         </Navbar.Collapse>
       </Container>
