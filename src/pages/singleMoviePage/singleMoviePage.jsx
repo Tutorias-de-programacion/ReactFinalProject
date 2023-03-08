@@ -61,7 +61,7 @@ const SingleMoviePage = () => {
                     <h4>{movie.title.slice(1)}</h4>
                     <p>{movie.overview}</p>
                     <div>
-                        button
+                        {/* button button */}
                     </div>
                     <div>
                   {movie.stars.map((star)=>{
@@ -72,8 +72,6 @@ const SingleMoviePage = () => {
                 <div className="SinglePage_main_right">
                   {movie.main_poster ? <img className="SinglePage_main_img" src={movie.main_poster}/>
                   : <img className="SinglePage_main_img" src={movie.images.backdrops[0].path}/>}
-                  
-                  
                 </div>
           </div>
           {mobile && <div className="overview_mobile"><p >{movie.overview}</p></div> }
