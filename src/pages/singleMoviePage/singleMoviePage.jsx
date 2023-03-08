@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useGetSingleMovie from "../../hooks/useGetSingleMovie";
 import './singleMoviePage.css'
 import Button from "../../components/Button/Button";
+import YoutubeVideo from "../../components/youtubeVideo/youtubeVideo";
 
 /*
 
@@ -91,8 +92,7 @@ const SingleMoviePage = () => {
                 </div>
                 <div className="SinglePage_section_right">
                   <h3>TRAILER</h3>
-                  <iframe className="trailerVideo" src={`https://www.youtube.com/embed/${movie.videos[0].key}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      {/* <YoutubeVideo width="300" height="200" videoKey={movie.videos[0].key}/> */}
+                      <YoutubeVideo className="trailerVideo" videoKey={movie.videos[0].key}/>
                 </div>
           </div>
           
