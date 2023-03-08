@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useGetSingleMovie from "../../hooks/useGetSingleMovie";
 import './singleMoviePage.css'
 import Button from "../../components/Button/Button";
@@ -15,13 +15,33 @@ I know this is obvious but if don't delete
 const SingleMoviePage = () => {
   const { movieId } = useParams();
   const [movie] = useGetSingleMovie(movieId);
+  const [mobile, setMobile] = useState(false)
 
-  // useEffect(()=>{
-  //  console.log(movie)
-  //  console.log(movie.stars[0].name)
-  // },[movie]
+  useEffect(()=>{
+   console.log(movie)
+  
+  },[movie])
+
+  useEffect(() => {
+    //This script updates the amount of images each time that the image resize. It adds an event listener to the windows object.
+   
+   
+    const handleResize = () => {
+      if (window.innerWidth <= 820) {
+        setMobile(true);
+      } else {
+        setMobile(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
     
-  // )
+  }, []);
+
   return (
     <>
       {/* <h1>Data Schema</h1>
@@ -35,15 +55,19 @@ const SingleMoviePage = () => {
       {movie && (
         <div>
           <div className="SinglePage_main">
-                <div className="SinglePage_main_left">
+                {!mobile && <div className="SinglePage_main_left">
                     <h3>{movie.title.split(" ")[0]}</h3>
                     <h4>{movie.title.slice(1)}</h4>
-
                     <p>{movie.overview}</p>
                     <div>
                         button
                     </div>
-                </div>
+                    <div>
+                  {movie.stars.map((star)=>{
+                    return <span key={star.credit_id}>| {star.name} | </span>
+                  })}
+                  </div>
+                </div>}
                 <div className="SinglePage_main_right">
                   {movie.main_poster ? <img className="SinglePage_main_img" src={movie.main_poster}/>
                   : <img className="SinglePage_main_img" src={movie.images.backdrops[0].path}/>}
@@ -51,6 +75,7 @@ const SingleMoviePage = () => {
                   
                 </div>
           </div>
+          {mobile && <div className="overview_mobile"><p >{movie.overview}</p></div> }
           <div className="SinglePage_section">
                 <div className="SinglePage_section_left">
                   <div>Director</div>
