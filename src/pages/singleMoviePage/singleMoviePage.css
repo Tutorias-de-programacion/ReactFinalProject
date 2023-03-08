@@ -70,11 +70,15 @@
 
 
 .SinglePage_section_right{
+    display: flex;
+    flex-direction: column;
     width: 30%;
     padding: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 .trailerVideo{
-    width:100%; 
+    width:auto; 
    height: 100%;
 }
 
