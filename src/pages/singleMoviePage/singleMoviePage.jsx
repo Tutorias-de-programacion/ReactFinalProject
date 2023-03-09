@@ -28,7 +28,7 @@ const SingleMoviePage = () => {
   }, []);
 
   return (
-    <>
+    <div>
       {movie && (
         <>
           <div className="SinglePage_main">
@@ -71,7 +71,7 @@ const SingleMoviePage = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 
