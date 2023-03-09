@@ -5,28 +5,12 @@ import './singleMoviePage.css'
 import Button from "../../components/Button/Button";
 import YoutubeVideo from "../../components/youtubeVideo/youtubeVideo";
 
-/*
-
-import dataSchema from "./dataSchema.png";
-I know this is obvious but if don't delete
-       the data Schema when you finish working with this page
-       or if you don't need it. 
-       */
-
 const SingleMoviePage = () => {
   const { movieId } = useParams();
   const [movie] = useGetSingleMovie(movieId);
   const [mobile, setMobile] = useState(false)
 
-  useEffect(()=>{
-   console.log(movie)
-  
-  },[movie])
-
   useEffect(() => {
-    //This script updates the amount of images each time that the image resize. It adds an event listener to the windows object.
-   
-   
     const handleResize = () => {
       if (window.innerWidth <= 820) {
         setMobile(true);
@@ -45,23 +29,15 @@ const SingleMoviePage = () => {
 
   return (
     <>
-      {/* <h1>Data Schema</h1>
-      <img src={dataSchema} width="100%" /> */}
-      {/*I know this is obvious but if don't delete
-       the data Schema when you finish working with this page
-       or if you don't need it*/}
-      {/* <h2>Here is an example of how you can use this data</h2>
-      <h2>Your movie id is {movieId}</h2> */}
-       
       {movie && (
-        <div>
+        <>
           <div className="SinglePage_main">
                 {!mobile && <div className="SinglePage_main_left">
                     <h3>{movie.title.split(" ")[0]}</h3>
                     <h4>{movie.title.slice(1)}</h4>
                     <p>{movie.overview}</p>
                     <div>
-                        {/* button button */}
+                        <Button/>
                     </div>
                     <div>
                   {movie.stars.map((star)=>{
@@ -93,22 +69,7 @@ const SingleMoviePage = () => {
                       <YoutubeVideo className="trailerVideo" videoKey={movie.videos[0].key}/>
                 </div>
           </div>
-          
-          {/*
-          <h3>Other images that you can use from here:</h3>
-
-          movie.images.backdrops &&
-            movie.images.backdrops.map((backdrop, key) => {
-              return <img src={backdrop.path} key={key}/>;
-            })
-            Sometimes movies doesn't have backdrops, please consider 
-            to use an alternative image when the image doesn't exist.
-            */
-            
-
-            }
-
-        </div>
+        </>
       )}
     </>
   );

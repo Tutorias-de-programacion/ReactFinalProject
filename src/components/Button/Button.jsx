@@ -8,7 +8,7 @@ const Button = () => {
     <button className={`button`}>
     {/* <FiPlay />
     <AiOutlineInfoCircle className="navText" /> */}
-    <h4>pepe</h4>
+    <h4>Button</h4>
     </button>
   )
 }
