@@ -1,0 +1,7 @@
+.buttons_content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
