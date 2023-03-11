@@ -1,10 +1,11 @@
 import Form from "react-bootstrap/Form";
-import { AiOutlineSearch, AiFillStar } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import Button from "react-bootstrap/Button";
 import "./SearchBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
 
 /*You all that you need to do is to redirect to SearchPage
 You should include the query on the search like this /search/El padrino 17
@@ -38,9 +39,7 @@ const SearchBar = () => {
           console.log(currentSearch);
         }}
       />
-      <Button variant="dark" className="txtColor">
-        <AiFillStar className="navText" />
-      </Button>
+
     </Form>
   );
 };
