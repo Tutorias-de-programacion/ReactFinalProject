@@ -2,7 +2,7 @@
 const FavoritesPage = () => {
     return (
     <>
-        <h1>Favorites Page</h1>
+        <h1>Welcome to reactFlix</h1>
     </>
     );
 }
