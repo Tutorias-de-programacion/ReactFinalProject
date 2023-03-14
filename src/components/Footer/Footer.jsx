@@ -40,7 +40,7 @@ const Footer = () => {
           </Col>
           <Col xs={12} md={3}>
             
-            <a href="https://github.com/Tutorias-de-programacion/ReactFinalProject" style={{color:"white", textDecoration:"none"}}>Github Repo</a>
+            <a href="https://github.com/Tutorias-de-programacion/ReactFinalProject" target="_blank" style={{color:"white", textDecoration:"none"}}>Github Repo</a>
           </Col>
           <Col xs={12} md={3}>
             <p>API</p>
