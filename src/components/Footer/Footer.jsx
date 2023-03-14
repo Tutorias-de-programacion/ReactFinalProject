@@ -1,20 +1,13 @@
-import { Link /*Or NavLink */ } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Link /*Or NavLink */} from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { Button } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
-import logo from "../../Assets/img/reactflixLogo.png";
-import { animateScroll } from "react-scroll";
+import Image from 'react-bootstrap/Image'
+import logo from '../../Assets/img/reactflixLogo.png'
+import './Footer.css'
+import { BsLinkedin, BsGithub, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs"
 
-import "./Footer.css";
-import {
-  BsLinkedin,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-  BsYoutube,
-} from "react-icons/bs";
 
 //Please use <Link> or <NavLink> instead of <a> for more information:
 //Link https://reactrouter.com/en/main/components/link
