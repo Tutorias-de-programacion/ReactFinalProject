@@ -40,7 +40,6 @@ const SearchBar = () => {
           console.log(currentSearch);
         }}
       />
-      <ButtonFavorite/>
     </Form>
   );
 };

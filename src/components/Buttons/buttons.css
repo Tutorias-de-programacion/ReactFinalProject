@@ -1,6 +1,6 @@
 .buttons_content{
     display: flex;
-    width: 100%;
+    width: max-content;
     justify-content: center;
     align-items: center;
     gap:1rem;
