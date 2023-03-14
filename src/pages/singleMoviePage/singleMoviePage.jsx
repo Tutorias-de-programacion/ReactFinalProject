@@ -58,9 +58,10 @@ const SingleMoviePage = () => {
                 <div className="mobile_section">
           </div>
         </div>
-                <div className="mobile">
-                    <Buttons/>
-                </div>
+        {mobile && <div id="SinglePage_mobile">
+              <Buttons/>
+              <p>{movie.overview}</p>
+        </div>}
           <div className="SinglePage_section">
                 <div className="SinglePage_section_left">
                   <div>Director</div>
