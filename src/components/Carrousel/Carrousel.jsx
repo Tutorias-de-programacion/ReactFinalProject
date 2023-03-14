@@ -72,7 +72,7 @@ useEffect(() => {
                 <CardGroup className="carrouselCard">
                   {movieGroup.map((movie) => {
                     return (
-                      <Card key={movie.id}>
+                      <Card key={movie.id} className="card">
                         <Link to={`movie/${movie.id}`}>
                           <Card.Img
                             src={movie.main_poster}

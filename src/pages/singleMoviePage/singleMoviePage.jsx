@@ -2,13 +2,16 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useGetSingleMovie from "../../hooks/useGetSingleMovie";
 import './singleMoviePage.css'
-import Button from "../../components/Button/Button";
+import Buttons from "../../components/Buttons/Buttons";
 import YoutubeVideo from "../../components/youtubeVideo/youtubeVideo";
 
 const SingleMoviePage = () => {
   const { movieId } = useParams();
   const [movie] = useGetSingleMovie(movieId);
   const [mobile, setMobile] = useState(false)
+  const [movieName, setMovieName]= useState([])
+
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,37 +23,45 @@ const SingleMoviePage = () => {
     };
     window.addEventListener("resize", handleResize);
     handleResize();
-
+    
+    
     return () => {
       window.removeEventListener("resize", handleResize);
     };
     
   }, []);
 
+  useEffect(()=>{
+    if (movie){
+      setMovieName(movie.title.split(" "))
+    }
+  
+  },[movie])
+
   return (
-    <div>
+    <>
       {movie && (
         <>
           <div className="SinglePage_main">
                 {!mobile && <div className="SinglePage_main_left">
                     <h3>{movie.title.split(" ")[0]}</h3>
-                    <h4>{movie.title.slice(1)}</h4>
+                    {movieName.length > 1 && <h4>{movie.title.split(" ").slice(1)}</h4>}
                     <p>{movie.overview}</p>
                     <div>
-                        <Button/>
+                      <Buttons/>
                     </div>
-                    <div>
-                  {movie.stars.map((star)=>{
-                    return <span key={star.credit_id}>| {star.name} | </span>
-                  })}
-                  </div>
                 </div>}
                 <div className="SinglePage_main_right">
                   {movie.main_poster ? <img className="SinglePage_main_img" src={movie.main_poster}/>
                   : <img className="SinglePage_main_img" src={movie.images.backdrops[0].path}/>}
                 </div>
+                <div className="mobile_section">
           </div>
-          {mobile && <div className="overview_mobile"><p >{movie.overview}</p></div> }
+        </div>
+        {mobile && <div id="SinglePage_mobile">
+              <Buttons/>
+              <p>{movie.overview}</p>
+        </div>}
           <div className="SinglePage_section">
                 <div className="SinglePage_section_left">
                   <div>Director</div>
@@ -71,7 +82,7 @@ const SingleMoviePage = () => {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 

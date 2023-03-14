@@ -1,10 +1,11 @@
 import Form from "react-bootstrap/Form";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch} from "react-icons/ai";
 import Button from "react-bootstrap/Button";
 import "./SearchBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ButtonFavorite from "../ButtonFavorite/ButtonFavorite";
 
 
 /*You all that you need to do is to redirect to SearchPage
@@ -39,7 +40,6 @@ const SearchBar = () => {
           console.log(currentSearch);
         }}
       />
-
     </Form>
   );
 };
