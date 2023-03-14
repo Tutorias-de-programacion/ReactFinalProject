@@ -45,7 +45,7 @@ const SingleMoviePage = () => {
           <div className="SinglePage_main">
                 {!mobile && <div className="SinglePage_main_left">
                     <h3>{movie.title.split(" ")[0]}</h3>
-                    {movieName.length > 1 && <h4>{movie.title.slice(1)}</h4>}
+                    {movieName.length > 1 && <h4>{movie.title.split(" ").slice(1)}</h4>}
                     <p>{movie.overview}</p>
                     <div>
                       <Buttons/>
