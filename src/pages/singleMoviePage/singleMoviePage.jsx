@@ -53,7 +53,7 @@ const SingleMoviePage = () => {
                 </div>}
                 <div className="SinglePage_main_right">
                   {movie.main_poster ? <img className="SinglePage_main_img" src={movie.main_poster}/>
-                  : <img className="SinglePage_main_img" src={movie.images.backdrops[0].path}/>}
+                  : <img className="SinglePage_main_img" alt={movie.title} src={movie.images.backdrops[0].path}/>}
                 </div>
                 <div className="mobile_section">
           </div>
@@ -65,19 +65,26 @@ const SingleMoviePage = () => {
           <div className="SinglePage_section">
                 <div className="SinglePage_section_left">
                   <div>Director</div>
+                  {movie.director ? 
                   <div>{movie.director.name}</div>
+                  : <div>unknown director</div>}
                   <div>Writer</div>
-                  <div>{movie.stars[0].name}</div>
+                  {movie.stars[0] ? 
+                  <div>{movie.stars[0].name}</div> 
+                  : <div>unknown Writer</div>}
                   <div>Stars</div>
                   <div>
-                  {movie.stars.map((star)=>{
+                  {movie.stars ? movie.stars.map((star)=>{
                     return <span key={star.credit_id}>| {star.name} | </span>
-                  })}
+                  })
+                  : <div>unknown Stars</div>}
                   </div>
                 </div>
                 <div className="SinglePage_section_right">
                   <h3>TRAILER</h3>
-                      <YoutubeVideo className="trailerVideo" videoKey={movie.videos[0].key}/>
+                      {movie.videos[0] ?
+                      <YoutubeVideo className="trailerVideo" videoKey={movie.videos[0].key}/> 
+                      :<YoutubeVideo className="trailerVideo" videoKey={movie.videos[0]}/>}
                 </div>
           </div>
         </>

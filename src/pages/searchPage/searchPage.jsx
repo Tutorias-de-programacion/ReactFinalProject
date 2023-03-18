@@ -21,7 +21,9 @@ const SearchPage = () => {
     }
   }
 
-
+useEffect(()=>{
+console.log(movieList)
+},[movieList])
   return (
     <>
       <div className="body">
