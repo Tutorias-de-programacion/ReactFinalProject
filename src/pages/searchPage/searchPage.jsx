@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useSearchMovie from "../../hooks/useSearchMovie";
+import Card from "../../components/Card/Card";
+import "./searchPage.css"
 
 const SearchPage = () => {
   const { query, pageNo } = useParams();
@@ -18,7 +20,7 @@ const SearchPage = () => {
       navigate(`/search/${query}/page/${Number(pageNo) - 1}`);
     }
   }
-
+  
   return (
     <>
       <div className="body">
@@ -26,13 +28,18 @@ const SearchPage = () => {
           <h2>To change page</h2>
           <button onClick={handleCLickPrev}>Previous</button>
           <button onClick={handleCLickNext}>Next</button>
-        <div className="mario"></div>
-          <h3>
-            The max amount of pages that you can use is {maxAmountOfPages}
-          </h3>
+          <h3>Your current search is: {query}</h3>
+          <div className="cards_list">
+              {movieList && movieList.map((movie)=>{
+                  return <Card
+                  title={movie.title}
+                  key={movie.id}
+                  url={movie.main_poster}
+                  id={movie.id}
+                  />
+              })}
+          </div>
         </div>
-        <h3>Your current search is: {query}</h3>
-        {movieList && JSON.stringify(movieList)}
       </div>
     </>
   );

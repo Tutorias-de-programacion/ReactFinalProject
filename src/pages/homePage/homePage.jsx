@@ -1,7 +1,11 @@
 import ReactFlixCarrousel from "../../components/Carrousel/Carrousel";
+import { useEffect, useState } from "react";
 import './homePage.css'
 
+
 const HomePage = () => {
+
+
   return (
     <>
       <div className="body">
