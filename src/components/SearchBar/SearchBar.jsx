@@ -22,25 +22,24 @@ const SearchBar = () => {
       setCurrentSearch(target.value);
   }
 
-  function handleCLick() {
-    setCurrentSearch("")
-  }
-
   const navigate = useNavigate();
 
   function submitFind(e){
     e.preventDefault()
-    navigate(`search/${currentSearch}/page/1`);
-    setCurrentSearch("")
+    if (currentSearch != ""){
+      navigate(`search/${currentSearch}/page/1`);
+    setCurrentSearch("") 
+    } else{
+      alert("please write which movie you want to search")
+    }
+    
   }
 
   return (
     <Form className="d-flex" onSubmit={submitFind}>
-    <Link to={`/search/${currentSearch}/page/1`}>
-      <Button variant="dark" className="txtColor" onClick={handleCLick}>
+      <Button variant="dark" className="txtColor" onClick={submitFind}>
         <AiOutlineSearch />
       </Button>
-    </Link>
       <Form.Control
         type="search"
         placeholder="Search"
