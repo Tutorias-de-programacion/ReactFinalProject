@@ -1,6 +1,6 @@
 import HomePage from "./pages/homePage/homePage";
 import ErrorPage from "./pages/errorPage/errorPage";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, redirect } from "react-router-dom";
 import AboutPage from "./pages/aboutPage/aboutPage";
 import SingleMoviePage from "./pages/singleMoviePage/singleMoviePage";
 import SearchPage from "./pages/searchPage/searchPage";

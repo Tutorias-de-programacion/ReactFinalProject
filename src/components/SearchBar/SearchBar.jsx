@@ -1,4 +1,5 @@
 import Form from "react-bootstrap/Form";
+import { useNavigate} from 'react-router-dom';
 import { AiOutlineSearch} from "react-icons/ai";
 import Button from "react-bootstrap/Button";
 import "./SearchBar.css";
@@ -17,28 +18,35 @@ Ref: https://reactrouter.com/en/main/fetch/redirect
 const SearchBar = () => {
   const [currentSearch, setCurrentSearch] = useState("");
 
-  function handleCLick() {
-    console.log("its happening");
-    redirect(`search/${currentSearch}`);
+  function handleChange({ target }){
+      setCurrentSearch(target.value);
+  }
+
+  const navigate = useNavigate();
+
+  function submitFind(e){
+    e.preventDefault()
+    if (currentSearch != ""){
+      navigate(`search/${currentSearch}/page/1`);
+    setCurrentSearch("") 
+    } else{
+      alert("please write which movie you want to search")
+    }
+    
   }
 
   return (
-    <Form className="d-flex">
-    <Link to={`/search/${currentSearch}`}>
-      <Button variant="dark" className="txtColor" onClick={handleCLick}>
+    <Form className="d-flex" onSubmit={submitFind}>
+      <Button variant="dark" className="txtColor" onClick={submitFind}>
         <AiOutlineSearch />
       </Button>
-    </Link>
       <Form.Control
         type="search"
         placeholder="Search"
         className="me-2 form-field"
         aria-label="Search"
         value={currentSearch}
-        onChange={({ target }) => {
-          setCurrentSearch(target.value);
-          console.log(currentSearch);
-        }}
+        onChange={handleChange}
       />
     </Form>
   );
