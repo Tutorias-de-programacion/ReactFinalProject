@@ -2,13 +2,39 @@
     display: grid;
     grid-template-columns: repeat(
         auto-fit,
-        minmax(250px, 1fr)
+        minmax(18rem, 1fr)
     );
-    gap: 20px;
     margin-bottom: 0px;
     margin-top: 5px;
     align-items: center;
-    padding: 2rem 0rem 0rem 1rem;
+    padding: auto 1rem 1rem 1rem;
+}
+
+@media screen and (max-width:600px) {
+    .cards_list{
+        grid-template-columns: repeat(
+        auto-fit,
+        minmax(10rem, 1fr)
+    );
+    }
+}
+
+@media screen and (max-width:400px) {
+    .cards_list{
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(8rem, 1fr)
+        );
+    }
+}
+
+@media screen and (max-width:320px) {
+    .cards_list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .movie_dont_find{
