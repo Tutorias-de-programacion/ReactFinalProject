@@ -20,15 +20,16 @@ const SearchPage = () => {
       navigate(`/search/${query}/page/${Number(pageNo) - 1}`);
     }
   }
+
+  useEffect(()=>{
+    console.log(movieList)
+  }
+  ,[])
   
   return (
     <>
       <div className="body">
         <div>
-          <h2>To change page</h2>
-          <button onClick={handleCLickPrev}>Previous</button>
-          <button onClick={handleCLickNext}>Next</button>
-          <h3>Your current search is: {query}</h3>
           <div className="cards_list">
               {movieList && movieList.map((movie)=>{
                   return <Card
