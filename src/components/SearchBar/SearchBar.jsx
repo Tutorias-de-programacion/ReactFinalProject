@@ -4,7 +4,6 @@ import { AiOutlineSearch} from "react-icons/ai";
 import Button from "react-bootstrap/Button";
 import "./SearchBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import ButtonFavorite from "../ButtonFavorite/ButtonFavorite";
 
