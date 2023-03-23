@@ -35,14 +35,10 @@ const SingleMoviePage = () => {
     if (movie){
       setMovieName(movie.title.split(" "))
     }
-  
+
   },[movie])
 
-  useEffect(()=>{
-    console.log("componente montado")
-    console.log(movie)
-  }
-  ,[])
+
 
   return (
     <>

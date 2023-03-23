@@ -7,14 +7,9 @@
     border: none;
     gap: 1rem;
 }
-
-
-
-
-
-
 .button_play:hover{
     background: rgba(255, 255, 255, 0.5);
     
 }
+
 
