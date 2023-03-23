@@ -35,6 +35,7 @@
         align-items: center;
         justify-content: center;
     }
+
 }
 
 .movie_dont_find{
@@ -53,8 +54,6 @@
 .search_buttons{
     display: flex;
     gap: 1rem;
-    /* max-width: 12rem;
-    justify-content: space-between; */
 }
 
 .search_buttons > button{
