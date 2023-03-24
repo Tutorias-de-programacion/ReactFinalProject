@@ -69,7 +69,9 @@
 
 }
 
-
+.singlePage_buttons{
+    display: flex;
+}
 
 .SinglePage_section_right{
     display: flex;

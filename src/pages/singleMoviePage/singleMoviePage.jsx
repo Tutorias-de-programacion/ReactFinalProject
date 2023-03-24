@@ -4,6 +4,7 @@ import useGetSingleMovie from "../../hooks/useGetSingleMovie";
 import './singleMoviePage.css'
 import Buttons from "../../components/Buttons/Buttons";
 import YoutubeVideo from "../../components/youtubeVideo/youtubeVideo";
+import CarrouselSimilar from "../../components/CarrouselSimilar/CarrouselSimilar";
 
 const SingleMoviePage = () => {
   const { movieId } = useParams();
@@ -90,7 +91,10 @@ const SingleMoviePage = () => {
                       :<YoutubeVideo className="trailerVideo" videoKey={movie.videos[0]}/>}
                 </div>
           </div>
-          {movie.similar.length > 0 && <div>Peliculas similares</div>}
+           {movie.similar.length > 0 && <div>
+            <CarrouselSimilar similar={movie.similar}/>
+            </div>}              
+
         </>
       )}
     </>
