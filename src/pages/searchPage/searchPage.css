@@ -54,6 +54,7 @@
 .search_buttons{
     display: flex;
     gap: 1rem;
+    padding: 1rem;
 }
 
 .search_buttons > button{
