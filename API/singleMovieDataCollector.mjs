@@ -95,6 +95,15 @@ async function getMovieMainActors(movieId) {
   return crew.slice(0, 3);
 }
 
+async function getSimilarMovies(movieId) {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${api_key}&language=en-US`
+  );
+  const similar = response.data.results;
+
+  return similar;
+}
+
 async function getMovieDetails(id) {
   const response = axios.get(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`
@@ -111,4 +120,5 @@ export {
   getMovieMainActors,
   getMovieWriter,
   getMovieImages,
+  getSimilarMovies,
 };

@@ -6,6 +6,7 @@ import {
   getMovieMainActors,
   getMovieVideos,
   getMovieWriter,
+  getSimilarMovies,
 } from "./singleMovieDataCollector.mjs";
 import getMovieList from "./movieListDataCollector.mjs";
 import searchMovie from "./searchMovieCollector.mjs";
@@ -40,7 +41,8 @@ app.get("/movie/:id", (req, res) => {
     getMovieWriter(id),
     getMovieMainActors(id),
     getMovieImages(id),
-  ]).then(([movieDetails, director, videos, writer, stars, images]) => {
+    getSimilarMovies(id)
+  ]).then(([movieDetails, director, videos, writer, stars, images,similar]) => {
     res.json({
       id: movieDetails.id,
       title: movieDetails.original_title,
@@ -51,6 +53,7 @@ app.get("/movie/:id", (req, res) => {
       videos,
       writer,
       stars,
+      similar,
     });
   });
 });
