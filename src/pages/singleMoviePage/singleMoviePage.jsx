@@ -91,9 +91,9 @@ const SingleMoviePage = () => {
                       :<YoutubeVideo className="trailerVideo" videoKey={movie.videos[0]}/>}
                 </div>
           </div>
-           {movie.similar.length > 0 && <div>
+           {movie && <>{movie.similar.length > 0 && <div>
             <CarrouselSimilar similar={movie.similar}/>
-            </div>}              
+            </div>} </> }            
 
         </>
       )}

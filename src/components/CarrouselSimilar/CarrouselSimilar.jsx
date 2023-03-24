@@ -78,6 +78,7 @@ useEffect(() => {
                           <Card.Img
                             src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                             className="carrouselCard--img"
+                            alt={movie.title}
                           />
                         </Link>
                       </Card>
