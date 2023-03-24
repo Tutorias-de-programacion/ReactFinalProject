@@ -96,12 +96,24 @@ async function getMovieMainActors(movieId) {
 }
 
 async function getSimilarMovies(movieId) {
-  const response = await axios.get(
-    `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${api_key}&language=en-US`
-  );
-  const similar = response.data.results;
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${api_key}&language=en-US`
+    );
+    
+    let similar = response.data.results;
+    return similar;
+  }
+  catch (error) {
+    const err = error
+    if (err.response) {
+       console.log(err.response.status)
+       console.log(err.response.data)
+    }
+    this.handleAxiosError(error)
+ }
 
-  return similar;
+  
 }
 
 async function getMovieDetails(id) {
