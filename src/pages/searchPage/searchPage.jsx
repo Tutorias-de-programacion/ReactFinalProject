@@ -1,8 +1,8 @@
-import { useState , useEffect} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useSearchMovie from "../../hooks/useSearchMovie";
 import Card from "../../components/Card/Card";
 import "./searchPage.css"
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const SearchPage = () => {
   const { query, pageNo } = useParams();
@@ -24,11 +24,16 @@ const SearchPage = () => {
   return (
     <>
       <div className="body">
+      <h3>Your current search is: {query}</h3>
+      {movieList.length < 1 && 
+      <div className="movie_dont_find">
+        <h2>Movie not found</h2>
+        <h2>Don't give up</h2>
+        <h2>Shall we find another movie?</h2>
+      </div>}
         <div>
-          <h2>To change page</h2>
-          <button onClick={handleCLickPrev}>Previous</button>
-          <button onClick={handleCLickNext}>Next</button>
-          <h3>Your current search is: {query}</h3>
+          {movieList.length > 1 && <div className="search_buttons"><button onClick={handleCLickPrev}>Previous</button>
+          <button onClick={handleCLickNext}>Next</button></div>}
           <div className="cards_list">
               {movieList && movieList.map((movie)=>{
                   return <Card

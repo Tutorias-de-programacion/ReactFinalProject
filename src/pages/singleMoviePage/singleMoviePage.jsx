@@ -38,6 +38,12 @@ const SingleMoviePage = () => {
   
   },[movie])
 
+  useEffect(()=>{
+    console.log("componente montado")
+    console.log(movie)
+  }
+  ,[])
+
   return (
     <>
       {movie && (

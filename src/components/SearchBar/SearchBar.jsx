@@ -4,16 +4,7 @@ import { AiOutlineSearch} from "react-icons/ai";
 import Button from "react-bootstrap/Button";
 import "./SearchBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
-import ButtonFavorite from "../ButtonFavorite/ButtonFavorite";
-
-
-/*You all that you need to do is to redirect to SearchPage
-You should include the query on the search like this /search/El padrino 17
-remember to use redirect("/search/${yourQuery}")
-Ref: https://reactrouter.com/en/main/fetch/redirect
-*/
 
 const SearchBar = () => {
   const [currentSearch, setCurrentSearch] = useState("");
