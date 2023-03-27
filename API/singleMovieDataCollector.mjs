@@ -59,6 +59,7 @@ async function getMovieImages(movieId) {
 }
 
 async function getMovieWriter(movieId) {
+  try {
   const response = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${api_key}&language=en-US`
   );
@@ -66,42 +67,99 @@ async function getMovieWriter(movieId) {
 
   return crew.cast.find(
     (member) => member.job === "Writer" && member.department === "Writing"
-  );
+  );}catch (error) {
+    const err = error
+    if (err.response) {
+       console.log(err.response.status)
+       console.log(err.response.data)
+    }
+    this.handleAxiosError(error)
+ }
 }
 
 async function getMovieDirector(movieId) {
-  const response = await axios.get(
+ try { const response = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${api_key}&language=en-US`
   );
   const crew = response.data.crew;
 
   return crew.find(
     (member) => member.job === "Director" && member.department === "Directing"
-  );
+  );}catch (error) {
+    const err = error
+    if (err.response) {
+       console.log(err.response.status)
+       console.log(err.response.data)
+    }
+    this.handleAxiosError(error)
+ }
 }
 async function getMovieVideos(movieId) {
-  const response = await axios.get(
+  try {const response = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${api_key}&language=en-US`
   );
-  return response.data.results;
+  return response.data.results;} catch (error) {
+    const err = error
+    if (err.response) {
+       console.log(err.response.status)
+       console.log(err.response.data)
+    }
+    this.handleAxiosError(error)
+ }
 }
 
 async function getMovieMainActors(movieId) {
-  const response = await axios.get(
+  try {const response = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${api_key}&language=en-US`
   );
   const crew = response.data.crew;
 
-  return crew.slice(0, 3);
+  return crew.slice(0, 3);}
+  catch (error) {
+    const err = error
+    if (err.response) {
+       console.log(err.response.status)
+       console.log(err.response.data)
+    }
+    this.handleAxiosError(error)
+ }
+}
+
+async function getSimilarMovies(movieId) {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${api_key}&language=en-US`
+    );
+    
+    let similar = response.data.results;
+    return similar;
+  }
+  catch (error) {
+    const err = error
+    if (err.response) {
+       console.log(err.response.status)
+       console.log(err.response.data)
+    }
+    this.handleAxiosError(error)
+ }
+
+  
 }
 
 async function getMovieDetails(id) {
-  const response = axios.get(
+ try { const response = axios.get(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`
   );
   const movieDetails = await response;
 
-  return movieDetails.data;
+  return movieDetails.data;}catch (error) {
+    const err = error
+    if (err.response) {
+       console.log(err.response.status)
+       console.log(err.response.data)
+    }
+    this.handleAxiosError(error)
+ }
 }
 
 export {
@@ -111,4 +169,5 @@ export {
   getMovieMainActors,
   getMovieWriter,
   getMovieImages,
+  getSimilarMovies,
 };
