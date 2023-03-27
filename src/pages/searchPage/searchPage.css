@@ -54,8 +54,6 @@
 .search_buttons{
     display: flex;
     gap: 1rem;
-    /* max-width: 12rem;
-    justify-content: space-between; */
 }
 
 .search_buttons > button{
@@ -71,6 +69,4 @@
 .search_buttons > button:hover{
     background: rgba(255, 255, 255, 0.5);
 }
-
-
 
