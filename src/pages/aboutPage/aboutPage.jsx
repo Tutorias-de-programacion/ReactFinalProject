@@ -30,6 +30,7 @@ const AboutPage = () => {
         <div className="about_team">
             {memberData.map((member)=>{
                 return <Member
+                key={member.name}
                 name={member.name}
                 imgLink={member.picture}
                 linkedin={member.linkedin}
