@@ -1,7 +1,6 @@
 import React from 'react'
 import "./member.css"
 import { Image } from 'react-bootstrap'
-import logo from "../../Assets/img/team/jordis.png"
 
 const Member = ({imgLink, name,linkedin}) => {
 
