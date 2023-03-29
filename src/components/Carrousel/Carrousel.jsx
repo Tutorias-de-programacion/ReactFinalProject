@@ -11,7 +11,17 @@ const ReactFlixCarrousel = ({
   page = 1,
   title = "carrousel",
   autoChange = true,
+  setHoveredMovie = null,
 }) => {
+
+  //To manage the hover event
+  function updateHoveredMovie(movie)
+  {
+   setHoveredMovie(movie)
+    
+  }
+
+
   //Determine if is going to autoChange or not this line disables the carrousel animation autoChange
 
   let interval = 5000;
@@ -77,6 +87,7 @@ useEffect(() => {
                           <Card.Img
                             src={movie.main_poster}
                             className="carrouselCard--img"
+                            onMouseOver={()=>{setHoveredMovie(movie)}}
                           />
                         </Link>
                       </Card>
