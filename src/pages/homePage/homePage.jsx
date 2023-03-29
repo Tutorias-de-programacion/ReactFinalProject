@@ -7,7 +7,7 @@ const HomePage = () => {
   const [hoveredMovie, setHoveredMovie] = useState(null);
 
   return (
-    <>
+    <div className="home">
       {/*Keep in mind that the carrousel will work just if you use it in this way, but if you don't set the values. It has default values that will going to be added like this:
       {
         category ="popular",
@@ -25,8 +25,8 @@ const HomePage = () => {
 
       
     added*/}
-
-      <Viewer hoveredMovie={hoveredMovie} />
+    <div>
+    <Viewer hoveredMovie={hoveredMovie} />
       <ReactFlixCarrousel
         title="Popular"
         page={1}
@@ -34,6 +34,8 @@ const HomePage = () => {
         setHoveredMovie={setHoveredMovie}
         hoveredMovie={hoveredMovie}
       />
+    </div>
+      
       <ReactFlixCarrousel title="Upcoming!" page={2} category={"upcoming"} />
       <ReactFlixCarrousel
         title="Now Playing!"
@@ -41,7 +43,7 @@ const HomePage = () => {
         category={"now_playing"}
       />
       <ReactFlixCarrousel title="Top Rated!" page={2} category={"top_rated"} />
-    </>
+    </div>
   );
 };
 
