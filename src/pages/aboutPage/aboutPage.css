@@ -1,0 +1,37 @@
+.body_about{
+    padding: 3rem 0rem 0rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about_descrption{
+padding: 0rem 3rem 0rem 3rem;
+font-size: 2rem;
+text-align: justify;
+ 
+}
+
+.aboutLogos{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 5rem 1rem 4rem;
+}
+
+.about_team{
+display: flex;
+gap: 2rem;
+}
+
+
+@media screen and (max-width: 1000px){
+    .about_descrption{
+        font-size: 1.25rem;
+        
+         
+        }
+}

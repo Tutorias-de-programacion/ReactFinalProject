@@ -36,8 +36,6 @@ const SingleMoviePage = () => {
     if (movie){
       setMovieName(movie.title.split(" "))
     }
-    console.log(movie)
-
   },[movie])
 
   return (
