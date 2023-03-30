@@ -8,7 +8,7 @@ const Member = ({imgLink, name,linkedin}) => {
   return (
     
     <div className='member'>
-        <a  className='member_a' href={linkedin}>
+        <a  className='member_a' href={linkedin} target="_blank">
         <Image src={imgLink} fluid alt={name} className="pb-3 imgMember"/>
         </a>
         <p>{name}</p>
