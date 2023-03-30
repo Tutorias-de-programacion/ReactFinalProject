@@ -8,7 +8,7 @@
 
 .about_descrption{
 padding: 0rem 3rem 0rem 3rem;
-font-size: 1.25rem;
+font-size: 2rem;
 text-align: justify;
  
 }
@@ -25,4 +25,13 @@ text-align: justify;
 .about_team{
 display: flex;
 gap: 2rem;
+}
+
+
+@media screen and (max-width: 1000px){
+    .about_descrption{
+        font-size: 1.25rem;
+        
+         
+        }
 }
