@@ -38,8 +38,6 @@ const SingleMoviePage = () => {
     }
   },[movie])
 
-
-
   return (
     <>
       {movie && (
