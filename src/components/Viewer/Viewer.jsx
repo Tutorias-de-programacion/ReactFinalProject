@@ -1,21 +1,46 @@
 import useGetSingleMovie from "../../hooks/useGetSingleMovie";
 import Buttons from "../../components/Buttons/Buttons";
 import { useState, useEffect } from "react";
-
 function ImageComponent({ imageData }) {
+  const [aspectRatio, setAspectRatio] = useState(1);
+  const [viewWidth, setViewWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = `https://image.tmdb.org/t/p/original/${imageData.path}`;
+    img.onload = () => {
+      const imgAspectRatio = img.width / img.height;
+      setAspectRatio(imgAspectRatio);
+    };
+  }, [imageData]);
+
+  const imgHeight = viewWidth / aspectRatio;
+
   return (
     <img
       src={`https://image.tmdb.org/t/p/original/${imageData.path}`}
       style={{
-        width: "100vw",
-        height: `20vh * ${imageData.aspectRatio}`,
-        position: "static",
+        height: imgHeight,
+        width: "100%",
+        objectFit: "contain",
       }}
     />
   );
 }
 
-const Viewer = ({ hoveredMovie }) => {
+const Viewer = ({ hoveredMovie, children }) => {
   let filteredPosters = [];
   const [posterCounter, setPosterCounter] = useState(0);
 
@@ -45,11 +70,11 @@ const Viewer = ({ hoveredMovie }) => {
   }, [posterCounter, filteredPosters.length]);
 
   return (
-    hoveredMovie && (
-      <div style={{ position: "relative" }}>
+    <div style={{ width: "100%" }}>
+      {hoveredMovie && (
         <ImageComponent imageData={filteredPosters[posterCounter]} />
-      </div>
-    )
+      )}
+    </div>
   );
 };
 
