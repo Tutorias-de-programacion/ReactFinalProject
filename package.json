@@ -8,6 +8,7 @@
     "vite": "vite",
     "nodemon": "nodemon API/index.js",
     "dev": " npm run message && concurrently \"npm run vite\" \"npm run nodemon API/index.js \"",
+    "hostFront": "vite --host",
     "devFront": "node message.js && vite",
     "devBack": "nodemon API/index.js",
     "build": "vite build",
