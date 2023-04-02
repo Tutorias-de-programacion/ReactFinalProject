@@ -14,13 +14,7 @@ const ReactFlixCarrousel = ({
   setHoveredMovie = null,
 }) => {
 
-  //To manage the hover event
-  function updateHoveredMovie(movie)
-  {
-   setHoveredMovie(movie)
-    
-  }
-
+ 
 
   //Determine if is going to autoChange or not this line disables the carrousel animation autoChange
 
@@ -32,6 +26,7 @@ const ReactFlixCarrousel = ({
   //To get the data from the category
   const [movieList, setMovieList] = useGetMovieList(category, page);
   const [groupOfMovies, setGroupOfMovies] = useState([]);
+  
 
   //To divide all the movies in group of the max amount selected
   //To define the max quantity of card
@@ -43,7 +38,7 @@ const ReactFlixCarrousel = ({
    
     const handleResize = () => {
       if (window.innerWidth < 480) {
-        setMaxAmountOfCards(1);
+        setMaxAmountOfCards(3);
       } else if (window.innerWidth >= 480 && window.innerWidth < 992) {
         setMaxAmountOfCards(5);
       } else {
@@ -68,6 +63,7 @@ useEffect(() => {
       groups.push(movieList.slice(i, i + maxAmountOfCards));
     }
     setGroupOfMovies(groups);
+    
   }
 }, [movieList, maxAmountOfCards]);
 
