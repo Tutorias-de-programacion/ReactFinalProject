@@ -36,7 +36,6 @@ async function getMovieList(category, page) {
   );
   
 
-  console.log(movieList)
   return { results: movieList, total_pages: movieListRaw.data.total_pages };
 }
 
