@@ -3,8 +3,25 @@ import { useEffect, useState } from "react";
 import "./homePage.css";
 import Viewer from "../../components/Viewer/Viewer";
 
+import useGetMovieList from "../../hooks/useGetMovieList";
+
 const HomePage = () => {
-  const [hoveredMovie, setHoveredMovie] = useState(null);
+  const [randomPickupList] = useGetMovieList("upcoming", 1);
+  const [hoveredMovie, setHoveredMovie] = useState();
+
+  useEffect(() => {
+    function getARandomMovie(movieList) {
+      if (movieList.length > 0 && !hoveredMovie) {
+        const validMovies = movieList.filter((movie) => {
+          return movie.images?.backdrops.length > 0;
+        });
+        setHoveredMovie(
+          validMovies[Math.round(validMovies.length * Math.random())]
+        );
+      }
+    }
+    getARandomMovie(randomPickupList);
+  }, [setHoveredMovie, randomPickupList]);
 
   return (
     <div className="home">
@@ -25,24 +42,27 @@ const HomePage = () => {
 
       
     added*/}
-    <div>
-    <Viewer hoveredMovie={hoveredMovie} />
-      <ReactFlixCarrousel
-        title="Popular"
-        page={1}
-        autoChange={false}
-        setHoveredMovie={setHoveredMovie}
-        hoveredMovie={hoveredMovie}
-      />
-    </div>
-      
-      <ReactFlixCarrousel title="Upcoming!" page={2} category={"upcoming"} />
-      <ReactFlixCarrousel
-        title="Now Playing!"
-        page={2}
-        category={"now_playing"}
-      />
-      <ReactFlixCarrousel title="Top Rated!" page={2} category={"top_rated"} />
+      <div className="viewerSection">
+        <Viewer hoveredMovie={hoveredMovie} />
+        <ReactFlixCarrousel
+          title=""
+          page={1}
+          autoChange={false}
+          category="now_playing"
+          setHoveredMovie={setHoveredMovie}
+          hoveredMovie={hoveredMovie}
+        />
+      </div>
+      <div className="carrouselSection">
+        <ReactFlixCarrousel title="Upcoming!" page={2} category={"upcoming"} />
+
+        <ReactFlixCarrousel title="Popular!" page={2} category={"popular"} />
+        <ReactFlixCarrousel
+          title="Top Rated!"
+          page={2}
+          category={"top_rated"}
+        />
+      </div>
     </div>
   );
 };
