@@ -1,0 +1,22 @@
+.member{
+    display: flex;
+    max-width: 10rem;
+    height: 13rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.member_a{
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+}
+
+.imgMember{ 
+    border-radius: 50%;
+}
+
+.member >p {
+    text-align: center;
+}

@@ -1,0 +1,46 @@
+.card_container{
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    height: 20rem;
+    border: 2px solid var(--netflix-darkRed);
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card_img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:900px) {
+    .card_container{
+        min-width: 8rem;
+        height: 15rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .card_container{
+        min-width: 10rem;
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .card_container{
+        min-width: 8rem;
+        height: 12rem;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .card_container{
+        min-width: 12rem;
+        height: 18rem;
+    }
+}
