@@ -17,6 +17,8 @@ Este es el proyecto final para la clase de ReactJs con el profesor Francis Fulge
 
 > El branch debe tener el nombre del feature que se está trabajando.
 
+
+
 ## Standard commit
 
 Usaremos códigos [bracket code] para reportar lo que nosotros hicimos. La nomenclatura sería como esta:
@@ -29,7 +31,9 @@ Usaremos códigos [bracket code] para reportar lo que nosotros hicimos. La nomen
 
 > [Ti-01][Feat] config fetch hook to call to the public server.
 
+
 ### Los brackets codes son tres
+
 
 #### Feature
 
@@ -62,3 +66,4 @@ Un cambio importante, para poder utilizar el proyecto es crear tu API key de the
 ##### .env
 
 Una vez obtengas tu api key, copia el archivo .env.template y agrega el api key, recuerda dejar el archivo .env.template pero crea una copia que solo se llame .env, es importante para que no borres la plantilla en un próximo commit…
+

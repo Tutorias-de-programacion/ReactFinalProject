@@ -9,6 +9,7 @@ import { Image } from "react-bootstrap";
 import FavoritesPageButton from "../Favorites/FavoritesPageButton";
 import logo from "../../Assets/img/reactflixLogo.png"; 
 
+
 //Please use <Link> or <NavLink> instead of <a> for more information:
 //Link https://reactrouter.com/en/main/components/link
 //NavLink https://reactrouter.com/en/main/components/nav-link
@@ -27,6 +28,7 @@ const Header = () => {
             />
           </Link>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -34,7 +36,6 @@ const Header = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           ></Nav>
-
           <SearchBar />
           <FavoritesPageButton />
         </Navbar.Collapse>

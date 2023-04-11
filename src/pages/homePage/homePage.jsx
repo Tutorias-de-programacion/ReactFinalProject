@@ -107,7 +107,6 @@ useEffect(()=>{
       <ReactFlixCarrousel title="Upcoming!" page={2} category={"upcoming"} />
       <ReactFlixCarrousel title="Now Playing!" page={2} category={"now_playing"} />
       <ReactFlixCarrousel title="Top Rated!" page={2} category={"top_rated"} />
-      
     </>
   );
 };
