@@ -65,7 +65,7 @@ useEffect(()=>{
                   })
                   : <></>}
           </div>
-            <Buttons/>
+            <Buttons movie={moviePoster}/>
           </div>
          {!homeMobile && <div className="homePoster_carrousel">
           <ReactFlixCarrousel title="Popular" page={1} autoChange={false} />

@@ -3,6 +3,7 @@ import useSearchMovie from "../../hooks/useSearchMovie";
 import Card from "../../components/Card/Card";
 import "./searchPage.css"
 import SearchBar from "../../components/SearchBar/SearchBar";
+import { useEffect } from "react";
 
 const SearchPage = () => {
   const { query, pageNo } = useParams();
@@ -20,6 +21,13 @@ const SearchPage = () => {
       navigate(`/search/${query}/page/${Number(pageNo) - 1}`);
     }
   }
+  // ejemplo
+
+useEffect(()=>{
+  console.log(movieList)
+
+},[movieList])
+  //ejemplo
   
   return (
     <>

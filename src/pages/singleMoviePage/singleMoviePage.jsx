@@ -6,11 +6,14 @@ import Buttons from "../../components/Buttons/Buttons";
 import YoutubeVideo from "../../components/youtubeVideo/youtubeVideo";
 import CarrouselSimilar from "../../components/CarrouselSimilar/CarrouselSimilar";
 
+
 const SingleMoviePage = () => {
   const { movieId } = useParams();
   const [movie] = useGetSingleMovie(movieId);
   const [mobile, setMobile] = useState(false)
   const [movieName, setMovieName]= useState([])
+
+ 
 
   
 
@@ -37,7 +40,6 @@ const SingleMoviePage = () => {
       setMovieName(movie.title.split(" "))
     }
   },[movie])
-
   return (
     <>
       {movie && (
@@ -48,7 +50,7 @@ const SingleMoviePage = () => {
                     {movieName.length > 1 && <h4>{movie.title.slice(movie.title.split(" ")[0].length)}</h4>}
                     <p>{movie.overview}</p>
                     <div>
-                      <Buttons/>
+                      <Buttons movie={movie}/>
                     </div>
                 </div>}
                 <div className="SinglePage_main_right">
