@@ -32,8 +32,12 @@ const ButtonFavorite = ({text=false,movie}) => {
   },[movie])
 
   const addFavorite = ()=>{
-    const someMovie = favoriteMovies.some(favorite => {
-      return favorite.id === movie.movie.id});
+
+  const someMovie = favoriteMovies.some(favorite => {
+    return favorite.id === movie.movie.id});
+
+    
+
  if (!someMovie || !added){
   dispatch({
     type: "ADD_FAVORITE",
