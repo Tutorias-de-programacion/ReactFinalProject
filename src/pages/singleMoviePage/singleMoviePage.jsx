@@ -61,7 +61,7 @@ const SingleMoviePage = () => {
           </div>
         </div>
         {mobile && <div id="SinglePage_mobile">
-              <Buttons/>
+              <Buttons movie={movie}/>
               <p>{movie.overview}</p>
         </div>}
           <div className="SinglePage_section">
