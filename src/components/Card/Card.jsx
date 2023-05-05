@@ -25,7 +25,7 @@ const Card = ({title, url,id,favorite=false}) => {
     </Link>
       <div className={style.button}>
       {favorite && 
-      <button onClick={removeMovie} type="button" class="btn btn-outline-danger">Remove
+      <button onClick={removeMovie} type="button" className="btn btn-outline-danger">Remove
       </button>}
       </div>
     </div>

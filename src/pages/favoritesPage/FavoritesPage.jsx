@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFavoriteContext } from "../../context/ContextFavorites";
 import Card from "../../components/Card/Card";
 import styles from "./favorites.module.css"
@@ -6,8 +6,8 @@ import styles from "./favorites.module.css"
 
 const FavoritesPage = () => {
 
-   const {favoriteMovies } = useFavoriteContext();
-    
+    const {favoriteMovies } = useFavoriteContext();
+
     return (
     <div className={styles.body}>
         <h1>These are your favorites movies</h1>

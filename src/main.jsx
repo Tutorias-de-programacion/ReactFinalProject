@@ -7,10 +7,10 @@ import { FavoriteProvider } from "./context/ContextFavorites";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <FavoriteProvider>
-        <App />
-      </FavoriteProvider>
-    </BrowserRouter>
+    <FavoriteProvider>
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+    </FavoriteProvider>
   </React.StrictMode>
 );
