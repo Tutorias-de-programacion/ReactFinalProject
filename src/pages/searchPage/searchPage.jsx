@@ -21,14 +21,7 @@ const SearchPage = () => {
       navigate(`/search/${query}/page/${Number(pageNo) - 1}`);
     }
   }
-  // ejemplo
-
-useEffect(()=>{
-  console.log(movieList)
-
-},[movieList])
-  //ejemplo
-  
+ 
   return (
     <>
       <div className="body">
