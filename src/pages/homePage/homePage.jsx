@@ -65,7 +65,7 @@ useEffect(()=>{
                   })
                   : <></>}
           </div>
-            <Buttons/>
+            {/* <Buttons movie={moviePoster}/> */}
           </div>
          {!homeMobile && <div className="homePoster_carrousel">
           <ReactFlixCarrousel title="Popular" page={1} autoChange={false} />
@@ -81,7 +81,7 @@ useEffect(()=>{
       <div className="PosterMobile_section">
           <h3>{moviePoster.title.split(" ")[0]}</h3>
           {moviePosterName.length > 1 && <h4>{moviePoster.title.slice(moviePoster.title.split(" ")[0].length)}</h4>}
-          <Buttons/>
+          {/* <Buttons/> */}
       </div>
   </div>}</>}
       
